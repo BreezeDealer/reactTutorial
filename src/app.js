@@ -1,10 +1,26 @@
-const css = require("./app.scss");
-console.log("this is app");
-
 import React from "react";
-import ReactDOM from "react-dom";
 
-ReactDOM.render(
-    <h1>Hello, world!</h1>,
-    document.getElementById("root")
-)
+class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            buyItems: ["milk", "bread", "fruit"]
+        }
+    }
+
+    render(){
+        const {buyItems} = this.state;
+        return (
+           <div>
+               <h1>Shopping list.</h1>
+                {
+                    buyItems.map(item => {
+                        return <p key={item}>{item}</p>
+                    })
+                }
+           </div>
+        )
+    }
+}
+
+export default App;
