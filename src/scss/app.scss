@@ -1,0 +1,24 @@
+body{
+    //background: #f2f2f2;
+    p.indianred{
+        //color: indianred;
+        text-decoration: line-through;
+        text-align: center;
+    }
+    .Comment{
+        padding: 5px 10px;
+        border: 1px solid #dadada;
+        box-shadow: 2px 2px 4px #dadada;
+    }
+    .UserInfo{
+        overflow: hidden;
+    }
+    .Avatar{
+        float: left;
+        border-radius: 50%;
+    }
+    .User-info-name{
+        float: left;
+        padding: 10px 0  0 20px;
+    }
+}

@@ -1,10 +1,9 @@
-const css = require("./app.scss");
-console.log("this is app");
-
+var css = require("../scss/app.scss");
 import React from "react";
 import ReactDOM from "react-dom";
+import Layout from "./components/Layout";
 
 ReactDOM.render(
-    <h1>Hello, world!</h1>,
+    <Layout />,
     document.getElementById("root")
 )

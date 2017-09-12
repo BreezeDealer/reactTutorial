@@ -4,7 +4,7 @@ var webpack = require("webpack");
 var path = require("path");
 module.exports = {
     entry: {
-        app: "./src/app.js"
+        index: "./src/js/index.js"
     },
     output: {
         path: path.resolve(__dirname, "./dist"),
@@ -36,12 +36,12 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: "React tutorial",
-            chunks: ["app"],
+            chunks: ["index"],
             minify: {
                 collapseWhitespace: true
             },
             hash: true,
-            template: "./src/index.html"
+            template: "./src/template/index.html"
         }),
         new ExtractTextPlugin({
             allChunks: true,
