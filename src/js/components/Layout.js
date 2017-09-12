@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 export default class Layout extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             name: "Kyle",
@@ -12,16 +12,20 @@ export default class Layout extends React.Component {
         }
     }
 
-    changeTitle(title){
-        this.setState({title});
+    changeTitle(title) {
+        this.setState({ title });
+    }
+
+    deleteAll() {
+
     }
 
     render() {
         return (
             <div>
-                <Header changeTitle={this.changeTitle.bind(this)} title={this.state.title} />
-                <h3>Hello, {this.state.name} !</h3>
-                <p>You must be {this.state.age} years old.</p>
+                <Header changeTitle={ this.changeTitle.bind(this) } title={ this.state.title } />
+                <h3>Hello, { this.state.name } !</h3>
+                <p>You must be { this.state.age } years old.</p>
                 <Footer />
             </div>
         )
