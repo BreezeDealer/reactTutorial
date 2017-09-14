@@ -2,6 +2,7 @@ var css = require("../scss/app.scss");
 import React from "react";
 import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
+import Form from "./components/Form"
 //  所有React组件必须像纯函数那样使用它们的props
 class Welcome extends React.Component {
     render() {
@@ -235,6 +236,22 @@ class LoginControl extends React.Component {
     }
 }
 
+//  用keys提取组件
+function ListItem(props) {
+    return <li>{props.value}</li>
+}
+function NumberList(props) {
+    const numbers = props.numbers;
+    return (
+        <ul>
+           {
+               numbers.map(number => 
+                    <ListItem key={number.toString()} value={number} />
+               )
+           }
+        </ul>
+    );
+}
 //  与运算符 &&
 class Mailbox extends React.Component {
     constructor (props){
@@ -251,15 +268,7 @@ class Mailbox extends React.Component {
                         <h2>
                             你有{unreadMessages.length}条未读消息。
                         </h2>
-                        {
-                            unreadMessages.map((item, index) => {
-                                return (
-                                    <p key={index}>
-                                        {item}
-                                    </p>
-                                )
-                            })
-                        }
+                        <NumberList numbers={unreadMessages} />
                     </div>
                     
                         
@@ -268,7 +277,7 @@ class Mailbox extends React.Component {
         )
     }
 }
-const messages = [1, 2, 3, 4, 5];
+const messages = ["To Jack", "re: Kyle", "re: re: Jack"];
 
 // 阻止组件渲染,render()方法返回null并不会影响组件生命周期方法的回调
 function WarningBanner(props) {
@@ -302,11 +311,46 @@ class Page extends React.Component {
                     {this.state.showWaring ? "Hide warning" : "Show warning"}
                 </button>
                 <LoginControl />
+                <Blog posts={posts} />
             </div>
         )
     }
 }
 
+//  元素的key在兄弟元素之间应该唯一
+function Blog(props) {
+    const sidebar = (
+        <ul>
+            {props.posts.map(post => 
+                <li key={post.id}>
+                    {post.title}
+                </li>
+            )}
+        </ul>
+    );
+    const content = props.posts.map(post => 
+        <div key={post.id}>
+            <h3>{post.title}</h3>
+            <p>{post.content}</p>
+        </div>
+    );
+    return (
+        <div>
+            {sidebar}
+            <hr/>
+            {content}
+        </div>
+    )
+}
+const posts = [
+    {id: 1, title: "Hello Wrold", content: "Welcome to learning React!"},
+    {id: 2, title: "Installation", content: "You can install React from npm."}
+]
+// ReactDOM.render(
+//     <Page />, root
+// )
+
+
 ReactDOM.render(
-    <Page />, root
+    <Form />, root
 )
