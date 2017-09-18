@@ -296,21 +296,21 @@ function WarningBanner(props) {
 class Page extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showWaring: true}
+        this.state = {showWarning: true}
     }
 
     handleToggleClick = () => {
         this.setState(prevState => ({
-            showWaring: !prevState.showWaring
+            showWaring: !prevState.showWarning
         }));
     }
 
     render () {
         return (
             <div>
-                <WarningBanner warn={this.state.showWaring} />
+                <WarningBanner warn={this.state.showWarning} />
                 <button onClick={this.handleToggleClick}>
-                    {this.state.showWaring ? "Hide warning" : "Show warning"}
+                    {this.state.showWarning ? "Hide warning" : "Show warning"}
                 </button>
                 <LoginControl />
                 <Blog posts={posts} />

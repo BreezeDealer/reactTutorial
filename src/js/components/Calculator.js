@@ -23,7 +23,15 @@ function toCelsius(f) {
 function toFahrenheit(c){
     return (c * 9 / 5) + 32
 }
-
+function tryConvert(temperature, convert) {
+    const input = parseFloat(temperature);
+    if(Number.isNaN(input)){
+        return "";
+    }
+    const output = convert(input);
+    const rounded = Math.round(out * 1000) /1000;
+    return rounded.toString();
+}
 class TemperatureInput extends React.Component {
     constructor(props) {
         super(props);
