@@ -2,8 +2,9 @@ var css = require("../scss/app.scss");
 import React from "react";
 import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
-import NameForm from "./components/NameForm"
-import Calculator from "./components/Calculator"
+import NameForm from "./components/NameForm";
+import Calculator from "./components/Calculator";
+import Inherit from "./components/Inherit";
 
 //  所有React组件必须像纯函数那样使用它们的props
 class Welcome extends React.Component {
@@ -354,5 +355,5 @@ const posts = [
 
 
 ReactDOM.render(
-    <Calculator />, root
+    <Inherit />, root
 )
