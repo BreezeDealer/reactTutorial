@@ -1,34 +1,98 @@
-body{
-    //background: #f2f2f2;
-    p.indianred{
+body {
+    background: linear-gradient(90deg, #1d8bdd 20%, #6d61b1 80%);
+    font-family: sans-serif;
+    color: #fff;
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .card {
+        background: #fff;
+        max-width: 450px;
+        min-width: 350px;
+        padding: 16px;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        color: #000;
+    }
+    p {
+        font-size: 20px;
+        margin: 8px;
+    }
+    p.indianred {
         //color: indianred;
         text-decoration: line-through;
         text-align: center;
     }
-    .Comment{
+    .Comment {
         padding: 5px 10px;
         border: 1px solid #dadada;
         box-shadow: 2px 2px 4px #dadada;
     }
-    .UserInfo{
+    .UserInfo {
         overflow: hidden;
     }
-    .Avatar{
+    .Avatar {
         float: left;
         border-radius: 50%;
     }
-    .User-info-name{
+    .User-info-name {
         float: left;
-        padding: 10px 0  0 20px;
+        padding: 10px 0 0 20px;
     }
-    .warning{
+    .warning {
         color: #a94442;
         background-color: #f2dede;
         border-color: #ebccd1;
-        padding: 15px;
+        padding: 16px;
         margin-bottom: 20px;
         border: 1px solid rgba(0, 0, 0, 0);
         border-radius: 4px;
         width: 300px;
+    }
+}
+
+$spacing-width: 4px;
+$white-color: #fff;
+.badge-promo {
+    position: relative;
+    overflow: hidden;
+    max-height: 60px;
+    margin-bottom: -($spacing-width * 2);
+    z-index: 1;
+    padding: 12px 14px;
+    border-radius: 2px 2px 0 0;
+    color: $white-color;
+    text-align: left;
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &:before {
+        background: #a5daff;
+        height: 100%;
+        width: 110%;
+        transform-origin: bottom right;
+        transform: rotate(1deg);
+    }
+    &:after {
+        background: #3fb0ff;
+        transform-origin: bottom left;
+        transform: rotate(-3deg);
+        height: 100%;
+        width: 110%;
+    }
+    .badge-promo-content {
+        position: relative;
+        z-index: 1;
+        text-transform: uppercase;
     }
 }

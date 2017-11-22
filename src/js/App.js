@@ -44,4 +44,4 @@ const comment = {
     date: new Date().toLocaleTimeString()
 }
 
-//export default Layout;
+export default Layout;
